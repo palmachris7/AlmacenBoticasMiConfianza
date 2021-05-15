@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="myPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProductosController">
+   <children>
+      <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="725.0" prefWidth="195.0" style="-fx-background-color: #4472C4#4472C4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="125.0" fitWidth="99.0" layoutX="48.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/icons8-person_female.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="exit" accessibleRole="MENU" contentDisplay="CENTER" focusTraversable="false" layoutX="110.0" layoutY="72.0" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#salir" prefHeight="41.0" prefWidth="32.0" ripplerFill="#ffffff00" text=" ">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/icons8-export.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnProductos2" buttonType="RAISED" layoutX="3.0" layoutY="211.0" onMouseClicked="#productos" prefHeight="84.0" prefWidth="188.0" style="-fx-background-color: #4472C4;" text="Productos" textFill="#f8f8f8" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="4.0">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/productos.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnPrincipal1" buttonType="RAISED" layoutX="4.0" layoutY="121.0" onMouseClicked="#principal" prefHeight="84.0" prefWidth="188.0" style="-fx-background-color: #4472C4;" text="Principal" textFill="#f8f8f8" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnInventario1" buttonType="RAISED" layoutX="3.0" layoutY="397.0" onMouseClicked="#inventario" prefHeight="84.0" prefWidth="188.0" style="-fx-background-color: #4472C4;" text="Inventario" textFill="#f8f8f8">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/inventario.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnReportes1" buttonType="RAISED" layoutX="3.0" layoutY="488.0" onMouseClicked="#reportes" prefHeight="84.0" prefWidth="188.0" style="-fx-background-color: #4472C4;" text="Reportes" textFill="#f8f8f8">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/reporte.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnMantenimiento1" buttonType="RAISED" layoutX="3.0" layoutY="579.0" onMouseClicked="#mantenimiento" prefHeight="84.0" prefWidth="188.0" style="-fx-background-color: #4472C4;" text="Mantenimiento" textFill="#f8f8f8">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/mantenimiento.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnLaboratorio" buttonType="RAISED" layoutX="2.0" layoutY="304.0" onMouseClicked="#laboratorio" prefHeight="84.0" prefWidth="188.0" style="-fx-background-color: #4472C4;" text="Laboratorio" textFill="#f8f8f8">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/icons8-laboratory.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="root_pane" layoutX="192.0" layoutY="21.0" prefHeight="699.0" prefWidth="1327.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="21.0">
+         <children>
+            <AnchorPane layoutY="13.0" prefHeight="734.0" prefWidth="1172.0" style="-fx-background-color: #FFFF;" stylesheets="@../styles/Products.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="13.0" />
+            <TabPane fx:id="tabpane" layoutY="-21.0" prefHeight="769.0" prefWidth="1178.0" rotateGraphic="true" style="-fx-background-color: #FFFFFF;" stylesheets="@../styles/Products.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="-21.0">
+               <tabs>
+                  <Tab text="Medicamentos">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="716.0" prefWidth="1180.0">
+                           <children>
+                              <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="30.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagenes/icons8-search.png" />
+                                 </image>
+                              </ImageView>
+                              <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="999.0" layoutY="272.0" onMouseClicked="#eliminar" prefHeight="38.0" prefWidth="147.0" style="-fx-background-color: #ED5525;" text="Eliminar" AnchorPane.rightAnchor="32.0">
+                                 <graphic>
+                                    <ImageView fitHeight="21.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icons8-trash.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnDelete111" buttonType="RAISED" layoutX="720.0" layoutY="684.0" onMouseClicked="#eliminar" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: #E5E5E5;" text="Exportar PDF" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="330.0">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icon-pdf.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXTextField fx:id="filterField" labelFloat="true" layoutX="64.0" layoutY="276.0" prefHeight="27.0" prefWidth="421.0" promptText="Ingrese medicamento" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="693.0" />
+                              <JFXTextArea fx:id="infoProducto" editable="false" labelFloat="true" layoutX="348.0" layoutY="48.0" prefHeight="181.0" prefWidth="441.0" promptText="Informacion" style="-fx-background-color: #4472C4;" stylesheets="@../styles/Products.css" text="&#10;" unFocusColor="#2044ae" AnchorPane.leftAnchor="348.0" AnchorPane.rightAnchor="389.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </JFXTextArea>
+                              <ImageView fx:id="imagen" fitHeight="157.0" fitWidth="321.0" layoutX="27.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: #85E5DD #85E5DD #85E5DD #85E5DD;" AnchorPane.leftAnchor="26.840240478515625" AnchorPane.rightAnchor="874.1597595214844">
+                                 <image>
+                                    <Image url="@../imagenes/descarga.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="33.0" layoutY="18.0" text="Detalles del Medicamento" textFill="#3c57b9">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tblViewProductos" editable="true" layoutX="29.0" layoutY="318.0" prefHeight="355.0" prefWidth="1116.0" stylesheets="@../styles/ListaProductos.css" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="318.0">
+                                 <columns>
+                                    <TableColumn fx:id="clmProductoNombre" prefWidth="75.0" text="Nombre" />
+                                    <TableColumn fx:id="clmLaboratorio" prefWidth="119.81053924560547" text="Laboratorio" />
+                                    <TableColumn fx:id="clmLote" prefWidth="30.689407348632812" text="Lote" />
+                                    <TableColumn fx:id="clmPresentacion" prefWidth="117.31056213378906" text="Presentacion" />
+                                    <TableColumn fx:id="clmTipo" prefWidth="80.689453125" text="Tipo" />
+                                    <TableColumn fx:id="clmFecha_vencimiento" prefWidth="139.257080078125" text="Vencimiento" />
+                                    <TableColumn fx:id="clmEstado_producto" minWidth="0.0" prefWidth="85.2098388671875" text="Estado" />
+                                    <TableColumn fx:id="clmPrecio_unid" minWidth="7.11163330078125" prefWidth="102.7322998046875" text="Precio/Unidad" />
+                                    <TableColumn fx:id="clmPrecio_caja" prefWidth="129.62103271484375" text="Precio/Caja" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <JFXButton fx:id="btnNuevo" buttonType="RAISED" layoutX="680.0" layoutY="272.0" onMouseClicked="#nuevo" prefHeight="35.0" prefWidth="147.0" style="-fx-background-color: #71ED25;" text="Nuevo" AnchorPane.rightAnchor="351.0">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icons8-add_new.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnEditar" buttonType="RAISED" layoutX="838.0" layoutY="272.0" onMouseClicked="#editar" prefHeight="37.0" prefWidth="147.0" style="-fx-background-color: #EDB625;" text="Editar" AnchorPane.rightAnchor="193.0">
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icons8-edit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnDelete11" buttonType="RAISED" layoutX="875.0" layoutY="684.0" onMouseClicked="#eliminar" prefHeight="35.0" prefWidth="128.0" style="-fx-background-color: #E5E5E5;" text="Exportar Excel" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="175.0">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icon-excel.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btnDelete1" buttonType="RAISED" layoutX="1030.0" layoutY="684.0" onMouseClicked="#eliminar" prefHeight="36.0" prefWidth="117.0" style="-fx-background-color: #E5E5E5;" text="Imprimir" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="31.0">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icon-imprimir.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <AnchorPane layoutX="839.0" layoutY="48.0" prefHeight="190.0" prefWidth="306.0" style="-fx-background-color: #4472C4 #4472C4;" AnchorPane.rightAnchor="33.0">
+                                 <children>
+                                    <Label layoutX="17.0" layoutY="40.0" prefHeight="20.0" prefWidth="123.0" text="Total Productos:" textFill="WHITE" />
+                                    <JFXTextField editable="false" focusColor="#6584e1" layoutX="185.0" layoutY="25.0" prefHeight="27.0" prefWidth="91.0" unFocusColor="WHITE" />
+                                    <Label layoutX="19.0" layoutY="97.0" prefHeight="20.0" prefWidth="123.0" text="Productos de baja:" textFill="WHITE" />
+                                    <JFXTextField editable="false" focusColor="#6584e1" layoutX="185.0" layoutY="83.0" prefHeight="27.0" prefWidth="93.0" unFocusColor="WHITE" />
+                                    <Label layoutX="15.0" layoutY="151.0" prefHeight="20.0" prefWidth="135.0" text="Productos Vencidos:" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField editable="false" focusColor="#6584e1" layoutX="184.0" layoutY="145.0" prefHeight="27.0" prefWidth="97.0" unFocusColor="WHITE" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imagenes/pildora.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Tab>
+                <Tab text="Galénicos">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tblViewProductos1" editable="true" layoutX="20.0" layoutY="299.0" prefHeight="366.0" prefWidth="1101.0" stylesheets="@../styles/ListaProductos.css" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="318.0">
+                                 <columns>
+                                    <TableColumn fx:id="clmProductoNombre1" prefWidth="75.0" text="Nombre" />
+                                    <TableColumn fx:id="clmLote1" prefWidth="30.689407348632812" text="Lote" />
+                                    <TableColumn fx:id="clmPrecio_unid1" minWidth="7.11163330078125" prefWidth="102.7322998046875" text="Precio/Unidad" />
+                                    <TableColumn fx:id="clmPrecio_caja1" prefWidth="129.62103271484375" text="Precio/Caja" />
+                                    <TableColumn fx:id="clmLaboratorio1" prefWidth="119.81053924560547" text="Clasificacion" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <JFXButton fx:id="btnDelete2" buttonType="RAISED" layoutX="999.0" layoutY="272.0" onMouseClicked="#eliminar" prefHeight="38.0" prefWidth="147.0" style="-fx-background-color: #ED5525;" text="Eliminar" AnchorPane.rightAnchor="32.0">
+                                 <graphic>
+                                    <ImageView fitHeight="21.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icons8-trash.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnNuevo1" buttonType="RAISED" layoutX="680.0" layoutY="272.0" onMouseClicked="#nuevo" prefHeight="35.0" prefWidth="147.0" style="-fx-background-color: #71ED25;" text="Nuevo" AnchorPane.rightAnchor="351.0">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icons8-add_new.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnEditar1" buttonType="RAISED" layoutX="838.0" layoutY="272.0" onMouseClicked="#editar" prefHeight="37.0" prefWidth="147.0" style="-fx-background-color: #EDB625;" text="Editar" AnchorPane.rightAnchor="193.0">
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icons8-edit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnDelete1111" buttonType="RAISED" layoutX="720.0" layoutY="684.0" onMouseClicked="#eliminar" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: #E5E5E5;" text="Exportar PDF" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="330.0">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icon-pdf.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btnDelete112" buttonType="RAISED" layoutX="875.0" layoutY="684.0" onMouseClicked="#eliminar" prefHeight="35.0" prefWidth="128.0" style="-fx-background-color: #E5E5E5;" text="Exportar Excel" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="175.0">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icon-excel.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btnDelete12" buttonType="RAISED" layoutX="1030.0" layoutY="684.0" onMouseClicked="#eliminar" prefHeight="36.0" prefWidth="117.0" style="-fx-background-color: #E5E5E5;" text="Imprimir" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="31.0">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icon-imprimir.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXTextArea fx:id="infoProducto1" editable="false" labelFloat="true" layoutX="348.0" layoutY="48.0" prefHeight="181.0" prefWidth="441.0" promptText="Informacion" style="-fx-background-color: #4472C4;" stylesheets="@../styles/Products.css" text="&#10;" unFocusColor="#2044ae">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </JFXTextArea>
+                              <ImageView fx:id="imagen1" fitHeight="179.0" fitWidth="238.0" layoutX="64.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: #85E5DD #85E5DD #85E5DD #85E5DD;">
+                                 <image>
+                                    <Image url="@../imagenes/bisturi.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="33.0" layoutY="18.0" text="Detalles del Producto" textFill="#3c57b9">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutX="839.0" layoutY="48.0" prefHeight="190.0" prefWidth="306.0" style="-fx-background-color: #4472C4 #4472C4;">
+                                 <children>
+                                    <Label layoutX="17.0" layoutY="40.0" prefHeight="20.0" prefWidth="123.0" text="Total Productos:" textFill="WHITE" />
+                                    <JFXTextField editable="false" focusColor="#6584e1" layoutX="185.0" layoutY="25.0" prefHeight="27.0" prefWidth="91.0" unFocusColor="WHITE" />
+                                    <Label layoutX="19.0" layoutY="97.0" prefHeight="20.0" prefWidth="123.0" text="Productos de baja:" textFill="WHITE" />
+                                    <JFXTextField editable="false" focusColor="#6584e1" layoutX="185.0" layoutY="83.0" prefHeight="27.0" prefWidth="93.0" unFocusColor="WHITE" />
+                                    <Label layoutX="15.0" layoutY="151.0" prefHeight="20.0" prefWidth="135.0" text="Productos Vencidos:" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField editable="false" focusColor="#6584e1" layoutX="184.0" layoutY="145.0" prefHeight="27.0" prefWidth="97.0" unFocusColor="WHITE" />
+                                 </children>
+                              </AnchorPane>
+                              <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="30.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagenes/icons8-search.png" />
+                                 </image>
+                              </ImageView>
+                              <JFXTextField fx:id="filterField1" labelFloat="true" layoutX="64.0" layoutY="276.0" prefHeight="27.0" prefWidth="421.0" promptText="Ingrese medicamento" />
+                           </children></AnchorPane>
+                  </content>
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imagenes/icons8-syringe.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                </Tab>
+                <Tab text="Bazar y Perfumería">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tblViewProductos11" editable="true" layoutX="40.0" layoutY="318.0" prefHeight="366.0" prefWidth="1101.0" stylesheets="@../styles/ListaProductos.css" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="318.0">
+                                 <columns>
+                                    <TableColumn fx:id="clmProductoNombre11" prefWidth="75.0" text="Nombre" />
+                                    <TableColumn fx:id="clmTipo11" prefWidth="80.689453125" text="Tipo" />
+                                    <TableColumn fx:id="clmFecha_vencimiento11" prefWidth="139.257080078125" text="Vencimiento" />
+                                    <TableColumn fx:id="clmEstado_producto11" minWidth="0.0" prefWidth="85.2098388671875" text="Estado" />
+                                    <TableColumn fx:id="clmPrecio_unid11" minWidth="7.11163330078125" prefWidth="102.7322998046875" text="Precio/Unidad" />
+                                    <TableColumn fx:id="clmPrecio_caja11" prefWidth="129.62103271484375" text="Precio/Caja" />
+                                    <TableColumn fx:id="clmLaboratorio11" prefWidth="119.81053924560547" text="Clasificacion" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <JFXButton fx:id="btnDelete21" buttonType="RAISED" layoutX="999.0" layoutY="272.0" onMouseClicked="#eliminar" prefHeight="38.0" prefWidth="147.0" style="-fx-background-color: #ED5525;" text="Eliminar" AnchorPane.rightAnchor="32.0">
+                                 <graphic>
+                                    <ImageView fitHeight="21.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icons8-trash.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnNuevo11" buttonType="RAISED" layoutX="680.0" layoutY="272.0" onMouseClicked="#nuevo" prefHeight="35.0" prefWidth="147.0" style="-fx-background-color: #71ED25;" text="Nuevo" AnchorPane.rightAnchor="351.0">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icons8-add_new.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnEditar11" buttonType="RAISED" layoutX="838.0" layoutY="272.0" onMouseClicked="#editar" prefHeight="37.0" prefWidth="147.0" style="-fx-background-color: #EDB625;" text="Editar" AnchorPane.rightAnchor="193.0">
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icons8-edit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnDelete1112" buttonType="RAISED" layoutX="720.0" layoutY="684.0" onMouseClicked="#eliminar" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: #E5E5E5;" text="Exportar PDF" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="330.0">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icon-pdf.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btnDelete113" buttonType="RAISED" layoutX="875.0" layoutY="684.0" onMouseClicked="#eliminar" prefHeight="35.0" prefWidth="128.0" style="-fx-background-color: #E5E5E5;" text="Exportar Excel" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="175.0">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icon-excel.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btnDelete13" buttonType="RAISED" layoutX="1030.0" layoutY="684.0" onMouseClicked="#eliminar" prefHeight="36.0" prefWidth="117.0" style="-fx-background-color: #E5E5E5;" text="Imprimir" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="31.0">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/icon-imprimir.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <ImageView fx:id="imagen11" fitHeight="172.0" fitWidth="132.0" layoutX="57.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: #85E5DD #85E5DD #85E5DD #85E5DD;">
+                                 <image>
+                                    <Image url="@../imagenes/oso.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="33.0" layoutY="18.0" text="Detalles del Producto" textFill="#3c57b9">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutX="839.0" layoutY="48.0" prefHeight="190.0" prefWidth="306.0" style="-fx-background-color: #4472C4 #4472C4;">
+                                 <children>
+                                    <Label layoutX="17.0" layoutY="40.0" prefHeight="20.0" prefWidth="123.0" text="Total Productos:" textFill="WHITE" />
+                                    <JFXTextField editable="false" focusColor="#6584e1" layoutX="185.0" layoutY="25.0" prefHeight="27.0" prefWidth="91.0" unFocusColor="WHITE" />
+                                    <Label layoutX="19.0" layoutY="97.0" prefHeight="20.0" prefWidth="123.0" text="Productos de baja:" textFill="WHITE" />
+                                    <JFXTextField editable="false" focusColor="#6584e1" layoutX="185.0" layoutY="83.0" prefHeight="27.0" prefWidth="93.0" unFocusColor="WHITE" />
+                                    <Label layoutX="15.0" layoutY="151.0" prefHeight="20.0" prefWidth="135.0" text="Productos Vencidos:" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField editable="false" focusColor="#6584e1" layoutX="184.0" layoutY="145.0" prefHeight="27.0" prefWidth="97.0" unFocusColor="WHITE" />
+                                 </children>
+                              </AnchorPane>
+                              <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="33.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagenes/icons8-search.png" />
+                                 </image>
+                              </ImageView>
+                              <JFXTextField fx:id="filterField11" labelFloat="true" layoutX="64.0" layoutY="276.0" prefHeight="27.0" prefWidth="421.0" promptText="Ingrese medicamento" />
+                              <JFXTextArea fx:id="infoProducto11" editable="false" labelFloat="true" layoutX="348.0" layoutY="48.0" prefHeight="181.0" prefWidth="441.0" promptText="Informacion" style="-fx-background-color: #4472C4;" stylesheets="@../styles/Products.css" text="&#10;" unFocusColor="#2044ae">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </JFXTextArea>
+                           </children></AnchorPane>
+                  </content>
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imagenes/icons8-teddy_bear.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                </Tab>
+               </tabs>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TabPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="731.0" prefHeight="35.0" prefWidth="636.0" style="-fx-background-color: #FFFF;" AnchorPane.leftAnchor="731.0" AnchorPane.rightAnchor="-1.0">
+         <children>
+            <JFXButton fx:id="btniMinimize" contentDisplay="CENTER" layoutX="510.0" onMouseClicked="#minimizar" text=" " textFill="#cfc51f" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/minimize.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnMaximizar" contentDisplay="CENTER" onMouseClicked="#maximizar" prefHeight="30.0" prefWidth="37.0" text=" " textFill="#1f7950" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/maximize.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnCerrar" contentDisplay="CENTER" onMouseClicked="#cerrar" text=" " textFill="#c94343" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+
+   </children>
+</AnchorPane>
